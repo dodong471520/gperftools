@@ -143,6 +143,8 @@ case "$with_tcmalloc_alignment" in
 esac
 
 # Checks for programs.
+CFLAGS='-g3 -O0'
+CXXFLAGS='-g3 -O0'
 AC_PROG_CXX
 AC_PROG_CC
 AC_PROG_CPP
