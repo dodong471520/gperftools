@@ -1,0 +1,5 @@
+thread cache all min 512kb * 8
+thread cahce all max 1gb
+thread cache min 512kb
+thread cache max 4mb
+FLAGS_tcmalloc_transfer_num_objects;
