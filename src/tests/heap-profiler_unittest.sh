@@ -137,7 +137,7 @@ VerifyOutputContains "62 MB freed"
 # testing of the HeapProfileStart/Stop functionality.
 $HEAP_PROFILER >"$TEST_TMPDIR/output2" 2>&1
 
-rm -rf $TEST_TMPDIR      # clean up
+# rm -rf $TEST_TMPDIR      # clean up
 
 if [ $num_failures = 0 ]; then
   echo "PASS"
