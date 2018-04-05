@@ -1,0 +1,43 @@
++ BINDIR=.
++ PPROF_PATH=./src/pprof
++ '[' x = x-h -o x = x--help ']'
++ HEAP_PROFILER=./heap-profiler_unittest
++ PPROF=./src/pprof
+++ mktemp -d /tmp/heap-profiler_unittest.XXXXXX
++ TEST_TMPDIR=/tmp/heap-profiler_unittest.CCmKxf
++ unset HEAPPROFILE
++ num_failures=0
++ HEAPPROFILE=/tmp/heap-profiler_unittest.CCmKxf/test
++ HEAP_PROFILE_INUSE_INTERVAL=10240
++ HEAP_PROFILE_ALLOCATION_INTERVAL=10240
++ HEAP_PROFILE_DEALLOCATION_INTERVAL=10240
++ export HEAPPROFILE
++ export HEAP_PROFILE_INUSE_INTERVAL
++ export HEAP_PROFILE_ALLOCATION_INTERVAL
++ export HEAP_PROFILE_DEALLOCATION_INTERVAL
++ ./heap-profiler_unittest 1
++ VerifyMemFunction Allocate2 /tmp/heap-profiler_unittest.CCmKxf/test.1329.heap
++ function=Allocate2
++ shift
+++ unset HEAPPROFILE
+++ ./heap-profiler_unittest --help
+++ awk '{print $2; exit;}'
++ exec=/root/.ghq/github.com/dodong471520/gperftools/.libs/lt-heap-profiler_unittest
++ '[' 1 = 2 ']'
++ '[' -f /tmp/heap-profiler_unittest.CCmKxf/test.1329.heap ']'
++ ./src/pprof /root/.ghq/github.com/dodong471520/gperftools/.libs/lt-heap-profiler_unittest /tmp/heap-profiler_unittest.CCmKxf/test.1329.heap
++ cat /tmp/heap-profiler_unittest.CCmKxf/output.pprof
++ tr -d %
++ awk '$6 ~ /^Allocate2$/ && $2 > 90 {exit 1;}'
++ '[' 1 '!=' 1 ']'
++ VerifyOutputContains '62 MB allocated'
++ text='62 MB allocated'
++ grep '62 MB allocated' /tmp/heap-profiler_unittest.CCmKxf/output
++ VerifyOutputContains '62 MB freed'
++ text='62 MB freed'
++ grep '62 MB freed' /tmp/heap-profiler_unittest.CCmKxf/output
++ ./heap-profiler_unittest
++ '[' 0 = 0 ']'
++ echo PASS
+PASS
++ exit 0
