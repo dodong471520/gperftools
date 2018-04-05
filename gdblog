@@ -1,0 +1,1 @@
+HEAPCHECK=local HEAP_CHECK_RUN_UNDER_GDB=true gdb .libs/heap-checker_unittest

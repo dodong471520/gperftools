@@ -232,7 +232,7 @@ void MemoryRegionMap::Init(int max_stack_depth, bool use_buckets) {
         MyAllocator::Allocate(table_bytes));
     recursive_insert = false;
     memset(bucket_table_, 0, table_bytes);
-    num_buckets_ = 0;
+    um_buckets_ = 0;
   }
   Unlock();
   RAW_VLOG(10, "MemoryRegionMap Init done");
