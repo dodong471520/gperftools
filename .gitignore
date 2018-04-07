@@ -2,6 +2,7 @@
 *.la
 *.lo
 *~
+/*.libs
 /*.log
 /*.trs
 /.deps
@@ -144,3 +145,4 @@
 /thread_dealloc_unittest.exe
 /unwind_bench
 /unwind_bench.exe
+!.libs/heap-checker_unittest-breakpoint
