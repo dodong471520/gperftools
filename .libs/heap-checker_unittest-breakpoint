@@ -11,7 +11,6 @@ break src/memory_region_map.cc:759
 break src/memory_region_map.cc:704
 break src/memory_region_map.cc:719
 break src/memory_region_map.cc:727
-break src/tests/heap-checker_unittest.cc:1412
 break src/tests/heap-checker_unittest.cc:272
 break src/heap-checker.cc:1248
 break src/heap-checker.cc:1025
@@ -27,4 +26,4 @@ break src/heap-profile-table.cc:430
 break src/heap-checker.cc:1788
 break src/heap-checker.cc:1813
 break src/heap-checker.cc:1836
-break src/tests/heap-checker_unittest.cc:1414
+break src/tests/heap-checker_unittest.cc:1465
