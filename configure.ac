@@ -239,24 +239,26 @@ fi
 # This workaround comes from
 #    http://cygwin.com/ml/cygwin/2004-11/msg00138.html
 case "$host" in
-  *-*-mingw*)
+    *-*-mingw*)
                dnl mingw doesn't have mmap, not worth
                dnl checking. Especially given that mingw can be a
                dnl cross-compiler
                ;;
-  *-*-cygwin*)
-	       ac_cv_func_mmap_fixed_mapped=yes
+    *-*-cygwin*)
+           ac_cv_func_mmap_fixed_mapped=yes
                AC_DEFINE(HAVE_MMAP, 1,
                          [Define to 1 if you have a working `mmap' system call.])
                ;;
-            *) if test "$cross_compiling" = yes; then
-                 ac_cv_func_mmap_fixed_mapped=yes
-                 AC_DEFINE(HAVE_MMAP, 1,
-                           [Define to 1 if you have a working `mmap' system call.])
-               else
-                 AC_FUNC_MMAP
-               fi
-               ;;
+    *) if test "$cross_compiling" = yes; then
+        AC_MSG_ERROR([ here 111 ])
+         ac_cv_func_mmap_fixed_mapped=yes
+         AC_DEFINE(HAVE_MMAP, 1,
+                   [Define to 1 if you have a working `mmap' system call.])
+       else
+         # AC_FUNC_MMAP
+         AC_CHECK_FUNCS([mmap])
+       fi
+       ;;
 esac
 
 # If AtomicWord != Atomic32, we need to define two versions of all the
